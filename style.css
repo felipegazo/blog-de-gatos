@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --color-azul: hsl(195, 91%, 25%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-gray: hsl(240, 6%, 13%);
+  --color-azul-2: hsl(195, 46%, 40%);
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+  font-size: 1.6rem;
+  color: var(--color-gray);
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 7.2rem;
+  background: var(--color-azul);
+  width: 100%;
+}
+
+header a {
+  line-height: 0;
+}
+
+header .container {
+  max-width: 34.7rem;
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+}
+
+
+
+header form label {
+  position: absolute;
+  display: none;
+}
+
+header form input {
+  border-radius: .4rem;
+  min-height: 4rem;
+  min-width: 24rem;
+  padding: .875rem 1rem;
+  border: none;
+  background: hsla(0, 0%, 100%, 0.2);
+  font-weight: 600;
+  font-family: "Mulish", sans-serif;
+  line-height: 100%;
+  color: var(--color-white);
+}
+
+header form input::placeholder {
+  color: var(--color-white);
+
+}
+
+
+main img {
+  width: 100%;
+  height: auto;
+}
+
+main {
+  margin: 2rem;
+  padding-inline: 2rem;
+
+}
+
+main h1 {
+  font-size: 2.4rem;
+  line-height: 160%;
+  margin: 3.2rem 0;
+  font-weight: 700;
+  max-width: 38.2rem;
+}
+
+main button {
+  background-color: var(--color-azul);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-top: .8rem;
+  color: var(--color-white);
+  border: 0;
+
+  transition: all 300ms;
+}
+
+main button img {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  
+}
+
+main button:hover {
+  transform: scale(1.1) rotate(10deg);
+  cursor: pointer;
+}
+
+main p {
+  margin-top: 3.2rem;
+  font-size: 1.6rem;
+  line-height: 160%;
+}
+
+aside {
+  flex: 1;
+  margin: 2rem;
+  padding-inline: 2rem;
+}
+
+.artigos-texto img{
+  width: 15rem;
+  height: 8.4rem;
+  border-radius: .8rem;
+}
+
+.artigos-texto {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  gap: 1.6rem;
+}
+
+aside h1 {
+  font-size: 2.4rem;
+  line-height: 160%;
+  margin-bottom: 2rem;
+}
+
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3.2rem;
+  align-items: flex-start;
+}
+
+ul li img {
+  aspect-ratio: 16/9;
+  width: 15.1rem;
+}
+
+section p {
+  font-size: 1.4rem;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.texto h2 {
+  font-size: 1.8rem;
+  line-height: 160%;
+}
+
+.texto p {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 160%;
+}
+
+footer {
+  background-color: var(--color-azul-2);
+  height: 6.4rem;
+  width: 100%;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-top: 4rem;
+}
+
+img {
+  transition: all 300ms;
+}
+
+@media (width > 80rem) {
+  img {
+    border-radius: .5px;
+  }
+
+  #app {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+
+    gap: 4.0rem 3.4rem;
+  }
+
+  header .container, .box {
+    max-width: initial;
+    margin-inline: initial;
+    padding: initial;
+  }
+
+  header {
+    grid-area: header;
+  }
+
+  header form {
+    flex: 1;
+  }  
+
+  header form input {
+    width: 108.3rem;
+  }
+
+  header .container {
+    max-width: 121.6rem;
+    margin-inline: auto;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+  main.box {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-top: 5rem;
+  }
+
+  aside {
+    grid-area: aside;
+  }
+
+  aside.box {
+    max-width: 38rem;
+    margin-top: 4rem;
+
+  }
+
+  footer {
+    grid-area: footer;
+  }
+}
+
+header {
+  animation: fromTop 400ms 200ms backwards;
+}
+
+main, aside {
+  animation: fromBottom 400ms 200ms backwards;
+}
+
+img:hover {
+  width: 100%;
+  height: auto;
+  scale: 1.05;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes fromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}
